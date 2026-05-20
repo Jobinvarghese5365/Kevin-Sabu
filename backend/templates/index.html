@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Brand Research Desktop Pro</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <div class="title">Brand Research Desktop Pro</div>
+          <div class="subtitle">Local web app (FastAPI) • Gemini-ready</div>
+        </div>
+        <div class="right">
+          <button id="themeToggle" class="btn secondary">Toggle theme</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="grid">
+          <div class="field col-12">
+            <label>Brand / Product Name</label>
+            <input id="brandName" placeholder="e.g. Nike" />
+          </div>
+
+          <div class="field col-4">
+            <label>Region</label>
+            <select id="region">
+              {% for r in regions %}
+              <option value="{{ r }}">{{ r }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field col-8 actions">
+            <label>&nbsp;</label>
+            <button id="researchBtn" class="btn primary">Research Brand</button>
+            <div id="status" class="status">Ready.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="sectionTitle">Results</div>
+
+        <div class="row">
+          <div class="rowLabel">Official Brand Name</div>
+          <input id="official_brand_name" />
+          <button class="btn small" data-copy="official_brand_name">Copy</button>
+          <button class="btn small secondary" data-search="official_brand_name">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Parent Organisation</div>
+          <input id="parent_organisation" />
+          <button class="btn small" data-copy="parent_organisation">Copy</button>
+          <button class="btn small secondary" data-search="parent_organisation">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Terms &amp; Conditions</div>
+          <input id="terms_conditions" />
+          <button class="btn small" data-copy="terms_conditions">Copy</button>
+          <button class="btn small secondary" data-search="terms_conditions">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Privacy Policy</div>
+          <input id="privacy_policy" />
+          <button class="btn small" data-copy="privacy_policy">Copy</button>
+          <button class="btn small secondary" data-search="privacy_policy">Google Search</button>
+        </div>
+
+        <div class="row textarea">
+          <div class="rowLabel">Description</div>
+          <textarea id="description" rows="6"></textarea>
+          <button class="btn small" data-copy="description">Copy</button>
+          <button class="btn small secondary" data-search="description">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Facebook</div>
+          <input id="facebook" />
+          <button class="btn small" data-copy="facebook">Copy</button>
+          <button class="btn small secondary" data-search="facebook">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Instagram</div>
+          <input id="instagram" />
+          <button class="btn small" data-copy="instagram">Copy</button>
+          <button class="btn small secondary" data-search="instagram">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">YouTube</div>
+          <input id="youtube" />
+          <button class="btn small" data-copy="youtube">Copy</button>
+          <button class="btn small secondary" data-search="youtube">Google Search</button>
+        </div>
+
+        <div class="row">
+          <div class="rowLabel">Logo URL</div>
+          <input id="logo_url" />
+          <button class="btn small" data-copy="logo_url">Copy</button>
+          <button class="btn small secondary" data-search="logo_url">Google Search</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
